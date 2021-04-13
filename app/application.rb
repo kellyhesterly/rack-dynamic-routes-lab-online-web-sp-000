@@ -4,7 +4,6 @@ class Application
   def initialize
     @item = item
     @price = price
-    @@item << self
   end
 
   def call(env)
@@ -15,5 +14,8 @@ class Application
 
     if req.path =="/items"
       resp.write
+    else
+      resp.write "Item not found"
+      resp.status = 404
   end
 end
