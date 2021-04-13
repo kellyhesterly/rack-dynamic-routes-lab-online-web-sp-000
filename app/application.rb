@@ -1,8 +1,12 @@
 class Application
     attr_accessor :item, :price
 
-    def initialize
-    end
+  def initialize
+    @item = item
+    @price = price
+    @@item << self
+  end
+
   def call(env)
     @@items = []
 
