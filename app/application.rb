@@ -1,10 +1,4 @@
 class Application
-    attr_accessor :item, :price
-
-  def initialize
-    @item = item
-    @price = price
-  end
 
   def call(env)
     @@items = []
@@ -13,7 +7,7 @@ class Application
     req = Rack::Request.new(env)
 
     if req.path =="/items"
-      resp.write
+      req.path
     else
       resp.write "Item not found"
       resp.status = 404
