@@ -14,7 +14,7 @@ class Application
     if req.path =="/items"
       @@items.each do |item|
         resp.write "#{item.price}\n"
-    else
+    elsif
       resp.write "Item not found"
       resp.status = 404
     end
